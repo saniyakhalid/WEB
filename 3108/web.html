@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        input, button { padding: 10px; margin: 10px; }
+        #result { margin-top: 20px; font-size: 1.2em; color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Factorial Calculator</h1>
+    <input type="text" id="numberInput" placeholder="Enter a number" >
+    <button onclick="calculateFactorial()">Calculate</button>
+    <div id="result"></div>
+    <script>
+        function calculateFactorial() {
+            const input = document.getElementById('numberInput').value;
+            const resultDiv = document.getElementById('result');
+            const n = parseInt(input);
+            let factorial = 1;
+            for (let i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+            resultDiv.textContent = `Factorial of ${n} is ${factorial}`;
+            resultDiv.className = '';
+        }
+    </script>
+</body>
+</html>
